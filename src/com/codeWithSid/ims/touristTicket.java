@@ -1,17 +1,35 @@
 package com.codeWithSid.ims;
 
-public class touristTicket extends ticket {
+public class touristTicket extends ticket{
 
-    String  hotelAddress;
-    String[0..5] selectedTouristLocation;
+    private String  hotelAddress;
+    private String[] selectedTouristLocation;
+
+    public touristTicket(String PNRNumber, String departureLocation, String destinationLocation, String dateTimeOfDeparture,
+                         String dateTimeOfArrival, String seatNo, float cost, boolean cancelled,
+                         Flight flight, Passenger passenger, String specialServices) {
+        super(PNRNumber, departureLocation, destinationLocation, dateTimeOfDeparture, dateTimeOfArrival, seatNo, cost, cancelled,
+                flight, passenger);
+        this.selectedTouristLocation = selectedTouristLocation;
+    }
+
+
     public  String getHotelAddress()
     {
-        return null;
+        return hotelAddress;
     }
-    public String getSelectedLocations()
-    {
-        return null;
+    public void setHotelAddress(String hotelAddress) {
+        this.hotelAddress = hotelAddress;
     }
+
+    public String[] getSelectedTouristLocation() {
+        return selectedTouristLocation;
+    }
+
+    public void setSelectedTouristLocation(String[] selectedTouristLocation) {
+        this.selectedTouristLocation = selectedTouristLocation;
+    }
+
     public String AddLocation()
     {
         return null;

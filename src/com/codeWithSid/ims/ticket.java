@@ -1,5 +1,5 @@
 package com.codeWithSid.ims;
-
+import java.time.LocalDateTime;
 public abstract class ticket {
 
 
@@ -13,7 +13,6 @@ public abstract class ticket {
     private Boolean cancelled;
     private  Flight flight;
     private  Passenger passenger;
-
 
 
     public ticket(String PNRNumber, String departureLocation, String destinationLocation, String dateTimeOfDeparture,
@@ -30,6 +29,8 @@ public abstract class ticket {
         this.flight = flight;
         this.passenger = passenger;
     }
+
+
 
     public String getPNRNumber() {
         return PNRNumber;
@@ -111,16 +112,20 @@ public abstract class ticket {
         this.passenger = passenger;
     }
 
-    public boolean checkStatus(boolean cancelled)
+    public String checkStatus(boolean cancelled)
     {
-        return true;
+        return cancelled ? "Cancelled" : "Confirmed";
     }
     public void cancellation()
     {
-
+        cancelled = true;
     }
-    public String getDateofJourney()
-    {
-
+    public int getDuration() {
+        LocalDateTime departureLocalDateTime = LocalDateTime.parse(dateTimeOfDeparture);
+        LocalDateTime arrivalLocalDateTime = LocalDateTime.parse(dateTimeOfArrival);
+        return (arrivalLocalDateTime.getDayOfMonth() - departureLocalDateTime.getDayOfMonth()) * 24 +
+                (arrivalLocalDateTime.getHour() - departureLocalDateTime.getHour());
     }
+
+
 }
