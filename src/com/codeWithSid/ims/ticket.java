@@ -11,13 +11,13 @@ public abstract class ticket {
     private String seatNo;
     private float cost;
     private Boolean cancelled;
-    private  Flight flight;
-    private  Passenger passenger;
+    private  flight flight;
+    private  passenger passenger;
 
 
     public ticket(String PNRNumber, String departureLocation, String destinationLocation, String dateTimeOfDeparture,
                   String dateTimeOfArrival, String seatNo, float cost, boolean cancelled,
-                  Flight flight, Passenger passenger) {
+                  flight flight, passenger passenger) {
         this.PNRNumber = PNRNumber;
         this.departureLocation = departureLocation;
         this.destinationLocation = destinationLocation;
@@ -96,19 +96,19 @@ public abstract class ticket {
         this.cancelled = cancelled;
     }
 
-    public Flight getFlight() {
+    public flight getFlight() {
         return flight;
     }
 
-    public void setFlight(Flight flight) {
+    public void setFlight(flight flight) {
         this.flight = flight;
     }
 
-    public Passenger getPassenger() {
+    public com.codeWithSid.ims.passenger getPassenger() {
         return passenger;
     }
 
-    public void setPassenger(Passenger passenger) {
+    public void setPassenger(passenger passenger) {
         this.passenger = passenger;
     }
 

@@ -47,7 +47,7 @@ public class passenger {
     public String getContact()
 
     {
-        return "Street: " + address.street + ", City: " + address.city + ", State: " + address.state;;
+        return "Street: " + address.street + ", City: " + address.city + ", State: " + address.state;
     }
 
     public String getAddress()
