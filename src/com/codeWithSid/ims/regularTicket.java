@@ -1,6 +1,6 @@
 package com.codeWithSid.ims;
 
-public class regularTicket {
+public class regularTicket extends ticket {
 
     String specialService;
 

@@ -1,6 +1,6 @@
 package com.codeWithSid.ims;
 
-public class touristTicket {
+public class touristTicket extends ticket {
 
     String  hotelAddress;
     String[0..5] selectedTouristLocation;

@@ -2,14 +2,60 @@ package com.codeWithSid.ims;
 
 public class passenger {
 
-    public Contact getContact()
+    private static int idCounter = 0;
+    private int id;
+
+    private static class Address {
+        String street, city, state;
+
+        Address(String street, String city, String state) {
+            this.street = street;
+            this.city = city;
+            this.state = state;
+        }
+    }
+    private Address address;
+
+
+
+    private static class Contact {
+        String name, phone, email;
+
+        Contact(String name, String phone, String email) {
+            this.name = name;
+            this.phone = phone;
+            this.email = email;
+        }
+    }
+    private Contact contact;
+
+
+
+    public passenger(String street, String city,String state,String name, String phone, String email)
     {
-        return Contact;
+        this.id = ++idCounter;
+        this.address = new Address(street, city, state);
+        this.contact = new Contact(name, phone, email);
     }
 
-    public Contact getAddress()
+
+    public int getId() {
+        return this.id;
+    }
+
+
+    public String getContact()
+
     {
-        return Address;
+        return "Street: " + address.street + ", City: " + address.city + ", State: " + address.state;;
+    }
+
+    public String getAddress()
+    {
+        return "Name: " + contact.name + ", Phone: " + contact.phone + ", Email: " + contact.email;
+    }
+    public static int getPassengerCount() {
+        return idCounter;
     }
 
 }
